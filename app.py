@@ -5,20 +5,6 @@ import pandas as pd
 import numpy as np
 import pickle
 
-# Load the trained model and the list of features
-# Assuming the model and features list are saved as 'model.pkl' and 'features.pkl'
-# You would need to save these from your training script
-# For now, we'll create dummy ones for demonstration
-try:
-    with open('model.pkl', 'rb') as f:
-        model = pickle.load(f)
-    with open('features.pkl', 'rb') as f:
-        features = pickle.load(f)
-except FileNotFoundError:
-    st.error("Model or features file not found. Please train the model and save 'model.pkl' and 'features.pkl'.")
-    st.stop()
-
-
 st.title('Financial Inclusion Prediction')
 
 st.write("""
