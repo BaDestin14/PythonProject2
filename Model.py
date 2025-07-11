@@ -107,6 +107,19 @@ print(f"F1-score: {f1:.4f}")
 
 import pickle
 
+# Load the trained model and the list of features
+# Assuming the model and features list are saved as 'model.pkl' and 'features.pkl'
+# You would need to save these from your training script
+# For now, we'll create dummy ones for demonstration
+try:
+    with open('model.pkl', 'rb') as f:
+        model = pickle.load(f)
+    with open('features.pkl', 'rb') as f:
+        features = pickle.load(f)
+except FileNotFoundError:
+    st.error("Model or features file not found. Please train the model and save 'model.pkl' and 'features.pkl'.")
+    st.stop()
+
 # Save the trained model
 with open('model.pkl', 'wb') as f:
     pickle.dump(model, f)
